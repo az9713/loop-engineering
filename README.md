@@ -8,6 +8,10 @@ A grounded synthesis of **Addy Osmani's "Loop Engineering"** — the shift from 
 
 [![Live graph](https://img.shields.io/badge/▶_Live_Knowledge_Graph-az9713.github.io-2ea043?style=for-the-badge)](https://az9713.github.io/loop-engineering/)
 
+[![Loop Engineering knowledge graph — the Loop Engineering node selected, showing its 15 neighbors and the seven communities](./loop_engineering_graphify.jpg)](https://az9713.github.io/loop-engineering/)
+
+<sub>*The `Loop Engineering` hub (degree 15) selected at center, beside its synthesis twin — the **barbell** waist. Note the green **Three Risks** cluster (right), reachable only through verification, not directly from the hub. [Open the live, interactive version →](https://az9713.github.io/loop-engineering/)*</sub>
+
 *Hosted on GitHub Pages — pan, zoom, drag nodes, explore the seven communities live. (GitHub strips JavaScript from README files, so the interactive version is served from the Pages site linked above; the self-contained source is [`graphify-out/graph.html`](./graphify-out/graph.html).)*
 
 ---
