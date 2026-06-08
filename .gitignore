@@ -1,0 +1,12 @@
+# Verbatim third-party source material — attributed by link in README, not republished
+raw_text.txt
+*.mhtml
+
+# graphify internal temp/cache files (keep the published outputs below)
+graphify-out/.graphify_*
+graphify-out/cost.json
+graphify-out/cache/
+
+# OS / editor cruft
+Thumbs.db
+.DS_Store
