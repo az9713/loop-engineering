@@ -27,6 +27,21 @@ All four loops in this repo implement the full set — nothing *required* is mis
 
 ✅ present & load-bearing · ⚠️ present but in modified form · ➖ intentionally unused
 
+### Plus Loop E — the sandbox that proves the principle
+
+[Loop E](./E-demo-sandbox/README.md) is a zero-dependency quick-test loop. It is the clearest demonstration that the blocks earn their place against a failure mode — it keeps only **four** of the six and drops the other two on purpose:
+
+| Component | E · `demo-loop` |
+|---|---|
+| **1 Automation** | ✅ `/demo-loop` · `$demo-loop` · `/loop 10m /demo-loop` |
+| **2 Worktrees** | ➖ **dropped** — one agent fixes one file; no collision to isolate |
+| **3 Skill** | ✅ `demo-loop` |
+| **4 Connectors** | ➖ **dropped** — fully local; touches no external tool |
+| **5 Sub-agents** | ✅ `demo-maker` → `demo-checker` |
+| **6 Memory** | ✅ `demo-state.md` |
+
+So the **irreducible core of a loop is four blocks** — automation, skill, sub-agents, memory — plus a verifiable stop condition. Worktrees appear when there's parallelism; connectors appear when the loop must act on real systems. A–D are this core plus those two; E shows the core alone, running end-to-end.
+
 ---
 
 ## Per-loop mapping

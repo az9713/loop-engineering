@@ -13,3 +13,7 @@ Thumbs.db
 
 # Local scratch (not authored here, not for publication)
 .ignore/
+
+# Python bytecode
+__pycache__/
+*.pyc

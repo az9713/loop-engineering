@@ -12,6 +12,7 @@ Invoke with `$<slug>` or `/skills`, or just describe the task in natural languag
 | `$triage-flaky` | reproduce, classify, and quarantine flaky tests | "flaky test", "triage flaky", "test fails intermittently" |
 | `$draft-postmortem` | draft a blameless, red-teamed postmortem | "draft a postmortem", "root cause analysis", "RCA", "what caused the outage" |
 | `$reconcile-docs` | reconcile drifted docs with the source | "docs are stale", "doc drift", "update docs to match code" |
+| `$demo-loop` | **zero-dependency quick test** — fix broken code until tests pass | "run the demo loop", "quick loop test", "make the sandbox tests pass" |
 
 ## Sub-agents (`.codex/agents/*.toml`)
 
@@ -21,6 +22,7 @@ Each loop defines a **maker** and a **checker**, spawned by the skill. The maker
 - `flaky-maker` / `flaky-checker`
 - `incident-investigator` / `incident-redteam`
 - `docs-maker` / `docs-checker`
+- `demo-maker` / `demo-checker` (sandbox quick test)
 
 ## Running them as loops
 

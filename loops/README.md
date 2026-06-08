@@ -13,7 +13,9 @@ Four ready-to-run automation loops, scaffolded for **both Codex and Claude Code*
 | **C** — Incident → postmortem draft | `draft-postmortem` | alert-triggered | `incident-investigator` → `incident-redteam` | redteam finds no contradiction **and** human sign-off (never auto-publishes) |
 | **D** — Docs-drift reconciliation | `reconcile-docs` | delta-on-merge | `docs-maker` → `docs-checker` (executes examples) | pages reconciled **and** every example runs **and** no broken links |
 
-**Start with Loop D** — its backpressure (do the doc examples run?) is the cheapest and most trustworthy, so it's the safest first loop to let run unattended.
+**Want to just watch a loop run, with zero setup?** → **[Loop E — Demo Sandbox](./E-demo-sandbox/README.md)**. It needs no GitHub/CI/MCP — it fixes deliberately-broken code until `python -m unittest` passes, so you can see the maker/checker/memory/stop-condition machinery converge in seconds. (A–D below touch your real systems and need their connectors wired first.)
+
+**Start with Loop D** (of the real ones) — its backpressure (do the doc examples run?) is the cheapest and most trustworthy, so it's the safest first loop to let run unattended.
 
 > 📐 **[How each loop maps to Addy's six building blocks →](./COMPONENT-MAPPING.md)** — a full component matrix plus an honest breakdown of where a block takes a non-obvious form (Loop C's event trigger and read-only worktree), where it's the weakest link, and why plugin packaging is intentionally skipped in project scope.
 
@@ -59,6 +61,7 @@ Each loop has its own folder with a README (trigger steps, the six-block table, 
 - [`B-flaky-test-hunter/`](./B-flaky-test-hunter/README.md) — memory: `state/flaky-state.md`
 - [`C-incident-postmortem/`](./C-incident-postmortem/README.md) — memory: `state/incidents-state.md`
 - [`D-docs-drift/`](./D-docs-drift/README.md) — memory: `state/docs-state.md`
+- [`E-demo-sandbox/`](./E-demo-sandbox/README.md) — **zero-dependency quick test** · memory: `state/demo-state.md` (deliberately drops worktrees + connectors)
 
 ## The maker/checker discipline (why the checker can't edit)
 
