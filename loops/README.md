@@ -15,6 +15,8 @@ Four ready-to-run automation loops, scaffolded for **both Codex and Claude Code*
 
 **Start with Loop D** — its backpressure (do the doc examples run?) is the cheapest and most trustworthy, so it's the safest first loop to let run unattended.
 
+> 📐 **[How each loop maps to Addy's six building blocks →](./COMPONENT-MAPPING.md)** — a full component matrix plus an honest breakdown of where a block takes a non-obvious form (Loop C's event trigger and read-only worktree), where it's the weakest link, and why plugin packaging is intentionally skipped in project scope.
+
 ---
 
 ## How to trigger — Claude Code
