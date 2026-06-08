@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loop Engineering — Live Knowledge Graph</title>
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  body { display: flex; flex-direction: column; background: #0d1117; }
+  header {
+    background: #161b22; color: #e6edf3; padding: 10px 18px;
+    border-bottom: 1px solid #30363d; display: flex; align-items: center;
+    gap: 16px; flex-wrap: wrap; flex: 0 0 auto;
+  }
+  header h1 { font-size: 15px; font-weight: 600; margin: 0; }
+  header .sub { font-size: 12px; color: #8b949e; }
+  header nav { margin-left: auto; display: flex; gap: 14px; }
+  header nav a { color: #58a6ff; text-decoration: none; font-size: 13px; }
+  header nav a:hover { text-decoration: underline; }
+  .frame-wrap { flex: 1 1 auto; position: relative; }
+  iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Loop Engineering &mdash; Live Knowledge Graph</h1>
+    <span class="sub">62 concepts &middot; 86 relationships &middot; 7 communities</span>
+    <nav>
+      <a href="https://github.com/az9713/loop-engineering#readme">README</a>
+      <a href="https://github.com/az9713/loop-engineering/blob/main/Loop-Engineering-Synthesis-Report.md">Synthesis Report</a>
+      <a href="https://github.com/az9713/loop-engineering/blob/main/Graph-Structure-Analysis.md">Structure Analysis</a>
+      <a href="https://github.com/az9713/loop-engineering/blob/main/graphify-out/graph.html">Open graph standalone</a>
+    </nav>
+  </header>
+  <div class="frame-wrap">
+    <iframe src="graphify-out/graph.html" title="Loop Engineering interactive knowledge graph"
+            sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+  </div>
+</body>
+</html>

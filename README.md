@@ -4,6 +4,12 @@ A grounded synthesis of **Addy Osmani's "Loop Engineering"** — the shift from 
 
 > *"Loop engineering is replacing yourself as the person who prompts the agent. You design the system that does it instead."* — Addy Osmani
 
+### 🔴 [**Explore the live interactive graph →**](https://az9713.github.io/loop-engineering/)
+
+[![Live graph](https://img.shields.io/badge/▶_Live_Knowledge_Graph-az9713.github.io-2ea043?style=for-the-badge)](https://az9713.github.io/loop-engineering/)
+
+*Hosted on GitHub Pages — pan, zoom, drag nodes, explore the seven communities live. (GitHub strips JavaScript from README files, so the interactive version is served from the Pages site linked above; the self-contained source is [`graphify-out/graph.html`](./graphify-out/graph.html).)*
+
 ---
 
 ## ⭐ Start here — our deep-dive materials
@@ -11,7 +17,8 @@ A grounded synthesis of **Addy Osmani's "Loop Engineering"** — the shift from 
 | File | What it is |
 |---|---|
 | **[Loop-Engineering-Synthesis-Report.md](./Loop-Engineering-Synthesis-Report.md)** | The main deliverable. A fully-cited synthesis grounding the loop-engineering thesis in 12 sources, with a strict quote-fidelity policy (verbatim only where verifiable; everything else paraphrased). |
-| **[graphify-out/graph.html](./graphify-out/graph.html)** | Interactive knowledge graph — open in any browser, no server needed. 62 concepts, 86 relationships, 7 thematic communities. |
+| **[Graph-Structure-Analysis.md](./Graph-Structure-Analysis.md)** | A structural trace of the graph — the *latent* structure the prose hides: barbell topology, two orthogonal spines, and why the risks sit one hop from the mechanisms. |
+| **[Live interactive graph](https://az9713.github.io/loop-engineering/)** | The knowledge graph as a live web page (GitHub Pages). 62 concepts, 86 relationships, 7 thematic communities. |
 | **[graphify-out/GRAPH_REPORT.md](./graphify-out/GRAPH_REPORT.md)** | Plain-language audit of the graph: god nodes, surprising cross-document connections, and the questions the graph is uniquely positioned to answer. |
 | **[graphify-out/graph.json](./graphify-out/graph.json)** | GraphRAG-ready raw graph data. |
 
@@ -96,9 +103,11 @@ All materials here are a **synthesis and commentary**; the original works belong
 ```
 .
 ├── README.md                              # you are here
+├── index.html                             # GitHub Pages entry → renders the live graph
 ├── Loop-Engineering-Synthesis-Report.md   # the deep-dive report (main deliverable)
+├── Graph-Structure-Analysis.md            # latent-structure trace of the graph
 └── graphify-out/
-    ├── graph.html                         # interactive knowledge graph
+    ├── graph.html                         # interactive knowledge graph (self-contained)
     ├── graph.json                         # GraphRAG-ready graph data
     └── GRAPH_REPORT.md                    # graph audit (god nodes, bridges, questions)
 ```
