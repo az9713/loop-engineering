@@ -62,6 +62,7 @@ Each loop has its own folder with a README (trigger steps, the six-block table, 
 - [`C-incident-postmortem/`](./C-incident-postmortem/README.md) — memory: `state/incidents-state.md`
 - [`D-docs-drift/`](./D-docs-drift/README.md) — memory: `state/docs-state.md`
 - [`E-demo-sandbox/`](./E-demo-sandbox/README.md) — **zero-dependency quick test** · memory: `state/demo-state.md` (deliberately drops worktrees + connectors)
+- [`E2-parallel-sandbox/`](./E2-parallel-sandbox/README.md) — **parallel quick test where worktrees ARE load-bearing** · memory: `state/parallel-state.md` (3 makers in 3 worktrees → integrator merges → full suite; run `verify_pipeline.py` to prove it converges)
 
 ## The maker/checker discipline (why the checker can't edit)
 

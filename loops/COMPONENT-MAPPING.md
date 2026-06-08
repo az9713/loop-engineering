@@ -42,6 +42,21 @@ All four loops in this repo implement the full set — nothing *required* is mis
 
 So the **irreducible core of a loop is four blocks** — automation, skill, sub-agents, memory — plus a verifiable stop condition. Worktrees appear when there's parallelism; connectors appear when the loop must act on real systems. A–D are this core plus those two; E shows the core alone, running end-to-end.
 
+### And Loop E2 — the core + worktrees (proof that worktrees earn their place)
+
+[Loop E2](./E2-parallel-sandbox/README.md) is E made **parallel**: three makers fix three independent modules concurrently, each in its own git worktree, then an integrator merges and runs the full suite. It adds exactly **one** block over E — worktrees — and only because parallelism creates the collision worktrees exist to prevent.
+
+| Component | E2 · `parallel-sandbox` |
+|---|---|
+| **1 Automation** | ✅ `/parallel-sandbox` · `/loop 15m /parallel-sandbox` |
+| **2 Worktrees** | ✅ **load-bearing** — one per module so 3 concurrent makers don't collide |
+| **3 Skill** | ✅ `parallel-sandbox` |
+| **4 Connectors** | ➖ **dropped** — still fully local |
+| **5 Sub-agents** | ✅ 3× `parallel-module-maker` + `parallel-integrator` |
+| **6 Memory** | ✅ `parallel-state.md` |
+
+**E → E2 is the controlled experiment for the worktree block:** identical except E2 is parallel, and that single change is what flips worktrees from ➖ (E) to ✅ (E2). The catch the design respects: worktrees isolate writers *during* work but don't merge edits *after*, so the work is partitioned **one module per worktree** (disjoint files → conflict-free merge). Run `python loops/E2-parallel-sandbox/verify_pipeline.py` to watch it converge.
+
 ---
 
 ## Per-loop mapping

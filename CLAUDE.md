@@ -13,8 +13,9 @@ Each loop is installed three ways: a **skill** (`.claude/skills/<slug>/SKILL.md`
 | `/draft-postmortem` | "draft a postmortem", "root cause analysis", "RCA", "what caused the outage" | event-driven (hook) — no `/loop` |
 | `/reconcile-docs` | "docs are stale", "doc drift", "update docs to match code" | `/loop 7d /reconcile-docs` |
 | `/demo-loop` | "run the demo loop", "quick loop test", "make the sandbox tests pass" | `/loop 10m /demo-loop` |
+| `/parallel-sandbox` | "parallel loop test", "run the parallel sandbox", "worktree loop demo" | `/loop 15m /parallel-sandbox` |
 
-**Quick test:** `/demo-loop` runs a zero-dependency sandbox loop (fixes broken code until `python -m unittest` passes) — the fastest way to see the machinery work end-to-end with no connectors. See [`loops/E-demo-sandbox/`](./loops/E-demo-sandbox/README.md).
+**Quick test:** `/demo-loop` runs a zero-dependency sandbox loop (fixes broken code until `python -m unittest` passes) — the fastest way to see the machinery work end-to-end with no connectors. See [`loops/E-demo-sandbox/`](./loops/E-demo-sandbox/README.md). `/parallel-sandbox` is the parallel variant where worktrees are load-bearing — see [`loops/E2-parallel-sandbox/`](./loops/E2-parallel-sandbox/README.md).
 
 **Three ways to fire a loop:** (1) describe the task in natural language → the skill auto-triggers; (2) the slash command for a one-shot run; (3) `/loop <interval> /<command>` to run it on a cadence. For laptop-off runs, schedule the command via GitHub Actions.
 
@@ -22,7 +23,7 @@ Each loop is installed three ways: a **skill** (`.claude/skills/<slug>/SKILL.md`
 
 Each loop spawns a **maker** (writes the change, `model: sonnet`) and a **checker** (verifies it, `model: opus`). The checker sub-agents have **no `Edit` tool** by design — they run tests/audits/link-checkers and execute examples to produce a PASS/FAIL verdict, but cannot modify the work they grade. This maker/checker split is what lets a running loop's *"it's done"* be trustworthy.
 
-- `deps-maker` / `deps-checker` · `flaky-maker` / `flaky-checker` · `incident-investigator` / `incident-redteam` · `docs-maker` / `docs-checker` · `demo-maker` / `demo-checker`
+- `deps-maker` / `deps-checker` · `flaky-maker` / `flaky-checker` · `incident-investigator` / `incident-redteam` · `docs-maker` / `docs-checker` · `demo-maker` / `demo-checker` · `parallel-module-maker` / `parallel-integrator`
 
 ## Working conventions
 

@@ -80,7 +80,9 @@ loops/<X>/README.md  +  loops/<X>/state/<name>-state.md               # docs + t
 
 The **checker** sub-agents run a stronger model and have **no edit tool** — they verify but can't grade their own work. Loop C never auto-publishes (human sign-off required). **Start with Loop D** (`reconcile-docs`) — cheapest, most trustworthy backpressure.
 
-> ▶️ **Just want to watch a loop run?** A–D touch your real systems (GitHub/CI/Slack) and need connectors wired first. **[Loop E — Demo Sandbox](./loops/E-demo-sandbox/README.md)** has zero dependencies: it fixes deliberately-broken code until `python -m unittest` passes, so you can see the maker/checker/memory/stop-condition machinery converge in seconds. Run `/demo-loop` (Claude Code) or `$demo-loop` (Codex).
+> ▶️ **Just want to watch a loop run?** A–D touch your real systems (GitHub/CI/Slack) and need connectors wired first. Two zero-dependency sandboxes let you see the machinery converge in seconds:
+> - **[Loop E — Demo Sandbox](./loops/E-demo-sandbox/README.md)** (`/demo-loop` · `$demo-loop`) — the irreducible 4-block core: fix broken code until `python -m unittest` passes.
+> - **[Loop E2 — Parallel Sandbox](./loops/E2-parallel-sandbox/README.md)** (`/parallel-sandbox` · `$parallel-sandbox`) — adds **worktrees as a load-bearing block**: 3 makers fix 3 modules in 3 worktrees, an integrator merges and runs the full suite. Prove it converges with no agent: `python loops/E2-parallel-sandbox/verify_pipeline.py`.
 
 📐 **[How each loop maps to the six building blocks](./loops/COMPONENT-MAPPING.md)** — a component matrix across all four loops, with an honest account of where a block takes a non-obvious form (Loop C's event trigger / read-only worktree), where it's the weakest link, and why plugin packaging is deliberately skipped in project scope.
 

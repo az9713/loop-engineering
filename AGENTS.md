@@ -13,6 +13,7 @@ Invoke with `$<slug>` or `/skills`, or just describe the task in natural languag
 | `$draft-postmortem` | draft a blameless, red-teamed postmortem | "draft a postmortem", "root cause analysis", "RCA", "what caused the outage" |
 | `$reconcile-docs` | reconcile drifted docs with the source | "docs are stale", "doc drift", "update docs to match code" |
 | `$demo-loop` | **zero-dependency quick test** — fix broken code until tests pass | "run the demo loop", "quick loop test", "make the sandbox tests pass" |
+| `$parallel-sandbox` | **parallel quick test** — worktrees load-bearing (3 makers, 3 worktrees, integrator merges) | "parallel loop test", "run the parallel sandbox", "worktree loop demo" |
 
 ## Sub-agents (`.codex/agents/*.toml`)
 
@@ -23,6 +24,7 @@ Each loop defines a **maker** and a **checker**, spawned by the skill. The maker
 - `incident-investigator` / `incident-redteam`
 - `docs-maker` / `docs-checker`
 - `demo-maker` / `demo-checker` (sandbox quick test)
+- `parallel-module-maker` / `parallel-integrator` (parallel worktree quick test)
 
 ## Running them as loops
 
