@@ -7,7 +7,8 @@ re-run knows which worktree/branch handled what.
 
 | date | result | modules fixed | merge | notes |
 |---|---|---|---|---|
-| (none yet) | - | - | - | seed - run `/parallel-sandbox` or `$parallel-sandbox` |
+| 2026-06-08 | PASS | calc, strings, dates | 3 clean (0 conflicts) | 3 worktrees fanned out, each module GREEN on its own gate, full suite GREEN after merge; worktrees + branches cleaned up |
+| 2026-06-08 | PASS (2 rounds) | calc, strings, dates | clean | under-fix demo: R1 gate FAILED on dates (premature done caught by integrator); R2 re-dispatched dates only -> correct -> full suite GREEN |
 
 ## Module -> worktree/branch map
 
