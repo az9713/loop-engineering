@@ -10,3 +10,6 @@ graphify-out/cache/
 # OS / editor cruft
 Thumbs.db
 .DS_Store
+
+# Local scratch (not authored here, not for publication)
+.ignore/

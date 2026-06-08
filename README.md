@@ -60,6 +60,26 @@ The synthesis report includes **four non-trivial, ready-to-apply loop designs**,
 
 Each design names concrete artifacts for every block: the cadence tool (`/loop`, cron, GitHub Actions, Codex Automations), the named skill, the specific connectors, the sub-agent model split, the worktree usage, the state file, and an explicit verifiable stopping condition. See the report's **§6** for the full tables.
 
+### ▶️ These four are scaffolded as runnable starter kits — for both tools
+
+All four loops are installed in **project scope** (nothing global) for **Codex** and **Claude Code**: skills, slash commands, and maker/checker sub-agents. See **[`loops/README.md`](./loops/README.md)** for the full trigger guide.
+
+```
+.claude/skills/<slug>/SKILL.md     .codex/skills/<slug>/SKILL.md      # the workflow (mirrored)
+.claude/commands/<slug>.md                                            # /<slug>, usable with /loop
+.claude/agents/<maker>.md|<checker>.md   .codex/agents/<maker>.toml|<checker>.toml   # sub-agents
+loops/<X>/README.md  +  loops/<X>/state/<name>-state.md               # docs + the memory file
+```
+
+| Loop | Slug | Trigger in Claude Code | Trigger in Codex |
+|---|---|---|---|
+| A | `upgrade-deps` | `/upgrade-deps` · `/loop 1d /upgrade-deps` · *"upgrade dependencies"* | `$upgrade-deps` · Automation (daily) |
+| B | `triage-flaky` | `/triage-flaky` · `/loop 1h /triage-flaky` · *"this test is flaky"* | `$triage-flaky` · Automation (post-CI) |
+| C | `draft-postmortem` | `/draft-postmortem` · hook · *"what caused the outage"* | `$draft-postmortem` · incident webhook |
+| D | `reconcile-docs` | `/reconcile-docs` · `/loop 7d /reconcile-docs` · *"docs are stale"* | `$reconcile-docs` · Automation (weekly) |
+
+The **checker** sub-agents run a stronger model and have **no edit tool** — they verify but can't grade their own work. Loop C never auto-publishes (human sign-off required). **Start with Loop D** (`reconcile-docs`) — cheapest, most trustworthy backpressure.
+
 ---
 
 ## 🕸 The knowledge graph
